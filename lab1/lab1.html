@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="../jquery.js"></script>
+
+		<script>
+			$(function () {
+				$("h1").text("Hello jQuery");
+				$('div:first').text("Welcome to jQuery");
+
+				$(".my-class:first").text("First");
+				$(".my-class:last").text("Last");
+
+				for(let i = 1 ; i < 6 ; i++){
+					$("#container p:nth-child(" + i + ")").text(i + " - This is a paragraph");
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<h1></h1>
+		<div id="welcome">Welcome to Javascript</div>
+		
+		<div class="my-class"></div>
+		<div class="my-class"></div>
+		
+		<div id="container">
+			<p>This is a paragraph</p>
+			<p>This is a paragraph</p>
+			<p>This is a paragraph</p>
+			<p>This is a paragraph</p>
+			<p>This is a paragraph</p>
+		</div>
+
+
+
+		
+		
+	</body>
+
+</html>

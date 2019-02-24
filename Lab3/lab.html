@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script src="jquery.js"></script>
+		<script>
+			$(function () {
+				$("#imgBtn").click(function (){
+					$("img").toggle()
+					$("#imgBtn").text(function(i ,text){
+						return text === "Turn Off" ? "Turn On" : "Turn Off";
+					})
+				})
+
+				// function lightOn() {
+				// 	$("img:nth-child(1)").css("display","");
+				// 	$("img:nth-child(2)").css("display","none");
+				// }
+				// function lightOff() {
+				// 	$("img:nth-child(1)").css("display","none");
+				// 	$("img:nth-child(2)").css("display","");
+				// }
+			})
+		</script>
+	</head>
+	<body>
+		<div style="text-align: center">
+		
+			<div class="imgContainer">
+				<img src="on.png" style="display:none"/>
+				<img src="off.png" />
+			</div>
+			
+			<button id="imgBtn" style="width:150px;height:70px">Turn on</button>
+			<hr />
+			<br />
+			
+			
+		</div>
+		
+		
+		
+	</body>
+</html>

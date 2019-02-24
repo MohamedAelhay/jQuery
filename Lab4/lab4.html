@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4</title>
+    <script src="jquery.js" ></script>
+
+    <script>
+        $(function(){
+            $('#loaderButton').click(function(){
+                $.ajax({
+                    //type:'GET',
+                    url:'cdcatalog.xml',
+                    success:function(respondData){
+                        $(respondData).find('CD').each(function(){
+                            $('#data').append(
+                                '<tr>' +
+                                '<td>' + $(this).find("TITLE").text() + '</td>'+
+                                '<td>' + $(this).find("ARTIST").text() + '</td>'+
+                                '<td>' + $(this).find("PRICE").text() + '</td>'+
+                                '</tr>');
+                        });
+                    },
+                    error:function () {
+                        alert("Error");
+                    }
+                })
+            });
+
+            $('#searchButton').click(function () {
+                let table = $('#data');
+                let searchValue = $('#searchField').val();
+
+                table.find('tr').each(function () {
+                    let recordTITLE = $(this).find('td:eq(0)').text();
+                    let recordArtist = $(this).find('td:eq(1)').text();
+
+                    if(recordTITLE.includes(searchValue) || recordArtist.includes(searchValue)){
+                        $(this).show()
+                    }else{
+                        $(this).hide()
+                    }
+                })
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <input type="button" value="Load Data" id="loaderButton">
+    <input type="text" placeholder="Search.." id="searchField">
+    <input type="button" value="Search" id="searchButton">
+
+    <div>
+        <table style="width:45%; border:10px" id="data">
+            <tr>
+                <th>TITLE</th>
+                <th>ARTIST</th>
+                <th>PRICE</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

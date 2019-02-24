@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lab 2</title>
+		<script src="jquery.js"></script>
+		<script>
+			$(function () {
+				$("li:nth-child(1), li:nth-child(4)").css("color","red");
+
+				$("a[href$='.org']").attr("href","http://www.yahoo.com").text("Yahoo");
+			})
+		</script>
+	</head>
+	<body>
+		<h2> Names: </h2>
+		<ul>
+			<li>Ahmed</li>
+			<li>Mohamed</li>
+			<li>Mahmoud</li>
+		</ul>
+		<hr />
+		<h2> Departments: </h2>
+		<ul>
+			<li>IT</li>
+			<li>Sales</li>
+			<li>HR</li>
+		</ul>
+		<hr />
+		<h2> References </h2>
+		<a href="http://www.google.com">Google</a>
+		<a href="http://www.wikipedia.org">Wikipedia</a>
+		<hr />
+		
+		
+	</body>
+</html>
